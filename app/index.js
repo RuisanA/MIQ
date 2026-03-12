@@ -1,18 +1,13 @@
 const { Client, Intents, MessageEmbed, MessageActionRow, MessageButton, MessageAttachment} = require("discord.js");
 const https = require("https");
 const http = require("http");
-const moment = require('moment');
 const express = require('express');
 const app = express();
 const fs = require('fs');
 const axios = require('axios');
 const { createCanvas, loadImage, registerFont } = require('canvas');
-const cheerio = require("cheerio");
-const util = require('util');
 const path = require('path');
 const cron = require('node-cron');
-const Keyv = require('keyv');
-const db = new Keyv(`sqlite://db.sqlite`, { table: "db" });
 require('dotenv').config();
 const client = new Client({
   partials: ["CHANNEL"],
@@ -39,18 +34,6 @@ process.env.TZ = 'Asia/Tokyo'
 "use strict";
 let guildId
 let pass = [3,5,0,9,1,2,4,11,8,7,6,10]
-
-const commands = {}
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'))
-const filePath = 'tokens.json';
-const data = fs.readFileSync(filePath, 'utf8');
-const tokensData = JSON.parse(data);
-const totalMembers = tokensData.reduce((count, entry) => count + Object.keys(entry).length, 0);
-
-for(const file of commandFiles){
-  const command = require(`./commands/${file}`);
-  commands[command.data.name] = command
-}
 
 if (process.env.DISCORD_BOT_TOKEN == undefined) {
   console.error('tokenが設定されていません！')
