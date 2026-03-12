@@ -1,5 +1,5 @@
 # Node.jsのバージョン、変える事。
-FROM node:16.x
+FROM node:18.x
 
 # 作業ディレクトリを /app に
 WORKDIR /app
