@@ -8,6 +8,7 @@ require("dotenv").config();
 const manager = new ShardingManager("./bot.js", {
   token: process.env.DISCORD_BOT_TOKEN,
   totalShards: "auto",
+  spawnTimeout: 300000,
 });
 
 manager.on("shardCreate", shard => {
