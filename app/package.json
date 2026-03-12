@@ -7,20 +7,14 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "@keyv/sqlite": "^3.6.7",
     "axios": "^1.5.1",
     "canvas": "^3.2.1",
-    "cheerio": "^1.1.2",
     "config.json": "^0.0.4",
     "discord.js": "^13.16.x",
     "dotenv": "^17.2.0",
     "express": "^4.19.2",
     "fs": "^0.0.2",
     "https": "^1.0.0",
-    "keyv": "^4.5.4",
-    "luxon": "^3.7.2",
-    "moment": "^2.30.1",
-    "ngrok": "^5.0.0-beta.2",
     "node-cron": "^3.0.3",
     "path": "^0.12.7",
     "util": "^0.12.5"
